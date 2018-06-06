@@ -1,0 +1,19 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.nav_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
+    a {
+        display: inline-block;
+        height: 100%;
+        // padding: .5rem;
+        text-align: center;
+        line-height: 3rem;
+    }
+    .active {
+        border-bottom: 2px solid black;
+    }
+}

@@ -1,0 +1,23 @@
+.home_recommend_container {
+    height: 10%;
+    .home_recommend_carsoul {
+        width: 100%;
+    }
+    .slick-dots {
+        bottom: .5rem;
+    }
+    .home_recommend_title_bar {
+        position: relative;
+        height: 2rem;
+        line-height: 2rem;
+        text-indent: .5rem;
+        span {
+
+        }
+        a {
+            position: absolute;
+            right: .5rem;
+            font-size: 2rem;
+        }
+    }
+}
