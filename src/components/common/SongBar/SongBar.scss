@@ -1,0 +1,15 @@
+.song_bar_container {
+    
+    padding: 15px 0;
+    margin: 0 10px;
+    span {
+        float: left;
+        width: 90%;
+        font-size: 14px;
+    }
+    i {
+        float: right;
+        width: 10%;
+        transform: translateX(.5rem);
+    }
+}

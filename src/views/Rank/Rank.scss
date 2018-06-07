@@ -1,0 +1,33 @@
+.rank_container {
+    ul {
+        li {
+            padding: 0 10px;
+            text-align: center;
+            a {
+                display: inline-block;
+                width: 95%;
+                height: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid gray;
+                img {
+                    float: left;
+                    width: 100px;
+                    height: 100px;
+                }
+                p {
+                    float: left;
+                    height: 100%;
+                    line-height: 100px;
+                    transform: translateX(10px);
+                }
+                span {
+                    float: right;
+                    height: 100%;
+                    line-height: 100px;
+                    transform: translateX(-10px);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

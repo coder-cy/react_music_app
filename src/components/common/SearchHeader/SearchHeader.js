@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
 
 import SearchHeader from './SearchHeader.jsx';
-// import { changeSearchStatus } from '../../../actions/common';
-// import { NOT_SEARCH, FOCUS_SEARCH, DONE_SEARCH } from '../../../constant';
 
 const mapStateToProps = state => {
     return {
-        ...state.common,
+        ...state,
     }
 }
 
