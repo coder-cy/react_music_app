@@ -25,7 +25,7 @@ export default class ArtistList extends React.Component {
                     list.map((singer,i) => {
                         return (
                             <li key={i}>
-                                <Link className="clearfloat" to={`/artist/detail/${singer.singerid}`}>
+                                <Link className="clearfloat" to={{pathname: `/artist/detail/${singer.singerid}`, state: {singerName: singer.singername}}}>
                                     <img src={singer.imgurl.replace(/\{size\}/g, 400)} />
                                     <p>{singer.singername}</p>
                                     <span>&gt;</span>

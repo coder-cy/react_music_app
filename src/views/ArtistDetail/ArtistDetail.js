@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ArtistDetail from './ArtistDetail.jsx';
-import { asyncFetchArtistDetailData } from '../../actions/artist';
+import { asyncFetchArtistDetailList } from '../../actions/artist';
 
 const mapStateToProps = state => {
     return {
@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchArtistDetailData: singerId => {
-            dispatch(asyncFetchArtistDetailData(singerId));
+        fetchArtistDetailList: singerId => {
+            dispatch(asyncFetchArtistDetailList(singerId));
         }
     }
 };

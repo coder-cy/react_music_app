@@ -1,7 +1,7 @@
 const initialState = {
     artistClassList: [],
     artistNameData: {singers: {list: {info: []}}},
-    artistSongData: {}
+    artistDetailList: []
 }
 
 export default (state = initialState, action) => {
@@ -15,6 +15,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 artistNameData: action.artistNameData
+            }
+        case 'FETCH_ARTIST_DETAIL_LIST':
+            return {
+                ...state,
+                artistDetailList: action.artistDetailList
             }
         default:
             return state;

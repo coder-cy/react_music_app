@@ -1,6 +1,7 @@
 import axios from 'axios';
 import API from '../utils/API';
 import Cheerio from 'cheerio';
+import 'babel-polyfill';
 
 export const asyncFetchArtistClassList = () => {
     return (dispatch,getState) => {
@@ -25,36 +26,24 @@ export const asyncFetchArtistNameData = (classId) => {
         })
     }
 }
-// request.asyncGet(`/yy_kugou/singer/home/${this.props.match.params.id}.html`).then(res => res.text()).then(res => {
-//     const $ = Cheerio.load(res);
-//     const list = $('#song_container').children();
-//     const dataArr = [];
-//     list.each((index, item) => {
-//         const link = $(item).find('a').find('input');
-//         dataArr.push(link.val());
-//     });
-//     this.setState({
-//         loaded: true,
-//         singerSongs: dataArr,
-//         singerimg: this.props.location.state.singerimg.replace(/\{size\}/g, '400'),
-//         singername: this.props.location.state.singername
-//     })
-// })
-export const asyncFetchArtistDetailData = (classId) => {
+
+export const asyncFetchArtistDetailList = (classId) => {
     return (dispatch,getState) => {
-        axios.get(`/yy_kugou/singer/home/${classId}.html`).then(res => {
-            console.log(res)
-            
-
-
-            // const list = $('#song_container').children();
-            // console.log(list)
-            // const dataArr = [];
-            // list.each((index, item) => {
-            //     const link = $(item).find('a').find('input');
-            //     dataArr.push(link.val());
-            // });
-            // console.log(dataArr)
+        fetch(`/yy_kugou/singer/home/${classId}.html`).then(res => res.text()).then(res => {
+            const $ = Cheerio.load(res);
+            const list = $('#song_container').children();
+            const dataArr = [];
+            list.each((index, item) => {
+                const link = $(item).find('a').find('input');
+                let data = link.val();
+                data = data.slice(0, data.indexOf('|'));
+                dataArr.push(data);
+            });
+            console.log('data of artistDetailList:', dataArr);
+            dispatch({
+                type: 'FETCH_ARTIST_DETAIL_LIST',
+                artistDetailList: dataArr
+            });
         });
     }
 }
