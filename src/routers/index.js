@@ -10,6 +10,7 @@ import RankDetail from '../views/RankDetail';
 import Artist from '../views/Artist';
 import ArtistList from '../views/ArtistList';
 import ArtistDetail from '../views/ArtistDetail';
+import Play from '../views/Play';
 
 export default () => (
     <div className="app">
@@ -24,6 +25,7 @@ export default () => (
                 <Route path="/artist" exact component={Artist}/>
                 <Route path="/artist/list/:classid" component={ArtistList}/>
                 <Route path="/artist/detail/:singerid" component={ArtistDetail}/>
+                <Route path="/play/:songid" component={Play}/>
             </Switch>
         </Router>
     </div>
